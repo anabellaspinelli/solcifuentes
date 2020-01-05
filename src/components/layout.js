@@ -48,7 +48,7 @@ class Layout extends React.Component {
             }}
             to={`/blog/`}
           >
-            {title}
+            {`${title} Blog`}
           </Link>
         </h3>
       )

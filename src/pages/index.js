@@ -27,7 +27,7 @@ class IndexPage extends React.Component {
           En la sección Blog encontrarán mis artículos más recientes.
         </p>
         <Link to="/blog/">
-          <Button marginTop="35px">Ir a Blog</Button>
+          <Button marginTop="35px">Ir al Blog</Button>
         </Link>
       </Layout>
     )
