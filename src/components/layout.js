@@ -26,7 +26,7 @@ class Layout extends React.Component {
               textDecoration: `none`,
               color: `inherit`,
             }}
-            to={location.pathname === blogPath ? `/blog/` : `/`}
+            to='/'
           >
             {title}
           </Link>
@@ -55,7 +55,7 @@ class Layout extends React.Component {
     }
     return (
       <Wrapper>
-        <div
+        <SiteContent
           style={{
             marginLeft: `auto`,
             marginRight: `auto`,
@@ -65,11 +65,11 @@ class Layout extends React.Component {
         >
           <header>{header}</header>
           <main>{children}</main>
-        </div>
+        </SiteContent>
         <Footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <Copyright>© {new Date().getFullYear()}, Sol Cifuentes.</Copyright>
+          <GatsbyCredit>Built with <a href="https://www.gatsbyjs.org">Gatsby</a></GatsbyCredit>
+
         </Footer>
       </Wrapper>
     )
@@ -77,12 +77,28 @@ class Layout extends React.Component {
 }
 
 const Wrapper = styled.div`
+  display: flex;
   min-height: 100vh;
+  flex-direction: column;
+`
+
+const SiteContent = styled.div`
+  flex: 1;
 `
 
 const Footer = styled.footer`
   text-align: center;
   margin: 24px;
+  font-size: 12px;
+`
+
+const Copyright = styled.p`
+  margin-bottom: 5px;
+`
+
+const GatsbyCredit = styled.p`
+  margin-bottom: 0px;
+  font-size: 10px;
 `
 
 export default Layout
