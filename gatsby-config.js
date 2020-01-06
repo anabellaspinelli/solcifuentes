@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     // edit below
-    title: `Sol Cifuentes`,
+    title: `sol cifuentes`,
     author: `Sol Cifuentes`,
     description: `Sol Cifuentes' personal blog.`,
     siteUrl: `https://solcifuentes.com/`,

@@ -37,7 +37,7 @@ class Blog extends React.Component {
                   </Link>
                 </h3>
                 <small>{node.frontmatter.date}</small>
-                <ReadingTime minutes={node.fields.readingTime.minutes} />
+                <ReadingTime minutes={node.fields.readingTime.minutes} small />
                 <p
                   dangerouslySetInnerHTML={{
                     __html: node.frontmatter.description || node.excerpt,

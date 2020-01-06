@@ -20,7 +20,7 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <h1>{post.frontmatter.title}</h1>
+        <h1 style={{ color: "var(--textLink)" }}>{post.frontmatter.title}</h1>
         <p
           style={{
             ...scale(-1 / 5),
