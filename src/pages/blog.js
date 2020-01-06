@@ -1,11 +1,13 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import styled from 'styled-components'
+
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import ReadingTime from '../components/reading-time'
 import { rhythm } from "../utils/typography"
+
 
 class Blog extends React.Component {
   render() {
@@ -35,7 +37,7 @@ class Blog extends React.Component {
                   </Link>
                 </h3>
                 <small>{node.frontmatter.date}</small>
-                <ReadingTime>{` – ${node.fields.readingTime.text}`}</ReadingTime>
+                <ReadingTime minutes={node.fields.readingTime.minutes} />
                 <p
                   dangerouslySetInnerHTML={{
                     __html: node.frontmatter.description || node.excerpt,
@@ -45,15 +47,10 @@ class Blog extends React.Component {
             )
           })}
         </div>
-      </Layout>
+      </Layout >
     )
   }
 }
-
-const ReadingTime = styled.small`
-  color: gray;
-  font-style: italic;
-`
 
 export default Blog
 
@@ -71,7 +68,7 @@ export const pageQuery = graphql`
           fields {
             slug
             readingTime {
-              text
+              minutes
             }
           }
           frontmatter {
