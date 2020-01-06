@@ -16,7 +16,10 @@ class IndexPage extends React.Component {
           title="Home"
           keywords={[`blog`, `sol cifuentes`]}
         />
-        <img style={{ margin: 0 }} src="./home-image.jpg" alt="Sol Cifuentes in the sun." />
+        <div style={{ height: "630px" }}>
+
+          <img style={{ margin: 0 }} src="./home-image.jpg" alt="Sol Cifuentes in the sun." />
+        </div>
         <h2>
           {"Hola a todes "}
           <span role="img" aria-label="wave emoji">👋</span>
