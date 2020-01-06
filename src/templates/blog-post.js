@@ -5,6 +5,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import ReadingTime from '../components/reading-time'
 import { rhythm, scale } from "../utils/typography"
 
 class BlogPostTemplate extends React.Component {
@@ -29,6 +30,7 @@ class BlogPostTemplate extends React.Component {
           }}
         >
           {post.frontmatter.date}
+          <ReadingTime minutes={post.fields.readingTime.minutes} />
         </p>
         <MDXRenderer>{post.body}</MDXRenderer>
         <hr
@@ -85,6 +87,11 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+      }
+      fields {
+        readingTime {
+          minutes
+        }
       }
     }
   }
