@@ -6,7 +6,10 @@ body {
   --hr: hsla(0, 0%, 0%, 0.2);
 
   background-color: var(--bg);
-  color: var(--textNormal)
+  color: var(--textNormal);
+
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
 }
 
 body.dark {

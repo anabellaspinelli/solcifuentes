@@ -25,7 +25,7 @@ class Layout extends React.Component {
           <React.Fragment>
             {isRootOrBlogIndex ? <h1
               style={{
-                ...scale(1.5),
+                ...scale(1),
                 marginBottom: rhythm(1.5),
                 marginTop: 0,
               }}
@@ -58,7 +58,7 @@ class Layout extends React.Component {
                   {`${title} Blog`}
                 </Link>
               </h3>}
-            <Toggle
+            <MarginToggle
               checked={theme === 'dark'}
               onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
               icons={{
@@ -116,29 +116,33 @@ const Header = styled.header`
   align-items: center;
 `
 
+const MarginToggle = styled(Toggle)`
+  margin-bottom: ${rhythm(1.5)}
+`
+
 const Wrapper = styled.div`
-        display: flex;
-        min-height: 100vh;
-        flex-direction: column;
-      `
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+`
 
 const SiteContent = styled.div`
-        flex: 1;
-      `
+  flex: 1;
+`
 
 const Footer = styled.footer`
-        text-align: center;
-        margin: 24px;
-        font-size: 12px;
-      `
+  text-align: center;
+  margin: 24px;
+  font-size: 12px;
+`
 
 const Copyright = styled.p`
-        margin-bottom: 5px;
-      `
+  margin-bottom: 5px;
+`
 
 const GatsbyCredit = styled.p`
-        margin-bottom: 0px;
-        font-size: 10px;
-      `
+  margin-bottom: 0px;
+  font-size: 10px;
+`
 
 export default Layout
