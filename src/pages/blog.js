@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import styled from 'styled-components'
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -34,6 +35,7 @@ class Blog extends React.Component {
                   </Link>
                 </h3>
                 <small>{node.frontmatter.date}</small>
+                <ReadingTime>{` – ${node.fields.readingTime.text}`}</ReadingTime>
                 <p
                   dangerouslySetInnerHTML={{
                     __html: node.frontmatter.description || node.excerpt,
@@ -47,6 +49,11 @@ class Blog extends React.Component {
     )
   }
 }
+
+const ReadingTime = styled.small`
+  color: gray;
+  font-style: italic;
+`
 
 export default Blog
 
@@ -63,6 +70,9 @@ export const pageQuery = graphql`
           excerpt
           fields {
             slug
+            readingTime {
+              text
+            }
           }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
