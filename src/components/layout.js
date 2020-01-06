@@ -56,7 +56,7 @@ class Layout extends React.Component {
                   }}
                   to={`/blog/`}
                 >
-                  {`${title} Blog`}
+                  {`${title} blog`}
                 </Link>
               </h3>}
             <MarginToggle
@@ -68,7 +68,7 @@ class Layout extends React.Component {
                     src={moon}
                     width="16"
                     height="16"
-                    role="presentation"
+                    alt="moon"
                     style={{ pointerEvents: 'none' }}
                   />
                 ),
@@ -77,7 +77,7 @@ class Layout extends React.Component {
                     src={sun}
                     width="16"
                     height="16"
-                    role="presentation"
+                    alt="sun"
                     style={{ pointerEvents: 'none' }}
                   />
                 ),

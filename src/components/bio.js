@@ -33,8 +33,8 @@ function Bio() {
                 borderRadius: `50%`,
               }}
             />
-            <p>
-              Escrito por <strong>{author}</strong>, una argentina que vive y trabaja en Barcelona.
+            <p style={{ fontSize: "14px" }}>
+              Escrito por <strong>{author}</strong>, una argentina que vive en Barcelona, trabaja para Francia y sueña con Buenos Aires.
               {` `}
               <a href={`https://twitter.com/${social.twitter}`}>
                 Seguime en Twitter.
