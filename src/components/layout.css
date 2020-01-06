@@ -1,0 +1,31 @@
+body {
+  --bg: #fbfcfd;
+  --textNormal: #333;
+  --textTitle: #345;
+  --textLink: #096fb0;
+  --hr: hsla(0, 0%, 0%, 0.2);
+
+  background-color: var(--bg);
+  color: var(--textNormal);
+
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+body.dark {
+  -webkit-font-smoothing: antialiased;
+  
+  --bg: #282c35;
+  --textNormal: rgba(255, 255, 255, 0.95);
+  --textTitle: lightskyblue;
+  --textLink: lightyellow;
+  --hr: hsla(0, 0%, 100%, 0.2);
+}
+
+a {
+  color: var(--textLink);
+}
+
+h1 {
+  color: var(--textTitle)
+}
