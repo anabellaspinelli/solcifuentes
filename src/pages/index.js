@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Button from "../components/button"
@@ -18,14 +19,10 @@ class IndexPage extends React.Component {
         <img style={{ margin: 0 }} src="./home-image.jpg" alt="Sol Cifuentes in the sun." />
         <h1>
           {"Hola a todes "}
-          <span role="img" aria-label="wave emoji">
-            👋
-          </span>
+          <span role="img" aria-label="wave emoji">👋</span>
         </h1>
         <p>Soy Solsie y este es mi sitio personal.</p>
-        <p>
-          En la sección Blog encontrarán mis artículos más recientes.
-        </p>
+        <p>En la sección Blog encontrarán mis artículos más recientes.</p>
         <Link to="/blog/">
           <Button marginTop="35px">Ir al Blog</Button>
         </Link>
