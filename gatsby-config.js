@@ -82,8 +82,6 @@ module.exports = {
         name: `Sol Cifuentes Blog`,
         short_name: `Sol Cifuentes`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
         display: `minimal-ui`,
         // edit below
         icon: `content/assets/open-book.png`,
