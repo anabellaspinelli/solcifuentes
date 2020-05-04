@@ -1,14 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
-import { ThemeToggler } from 'gatsby-plugin-dark-mode'
-import Toggle from 'react-toggle'
 import styled from "styled-components"
 
-import "react-toggle/style.css"
 import "./layout.css"
-import "./toggle.css"
-import sun from '../../content/assets/sun.png';
-import moon from '../../content/assets/moon.png';
 
 import { rhythm, scale } from "../utils/typography"
 
@@ -20,72 +14,44 @@ class Layout extends React.Component {
     const isRootOrBlogIndex = location.pathname === rootPath || location.pathname === blogPath
 
     const header = (
-      <ThemeToggler>
-        {({ theme, toggleTheme }) => (
-          <React.Fragment>
-            {isRootOrBlogIndex ? <h1
-              style={{
-                ...scale(1),
-                marginBottom: rhythm(1.5),
-                marginTop: 0,
-              }}
-            >
-              <Link
-                style={{
-                  boxShadow: `none`,
-                  textDecoration: `none`,
-                  color: `inherit`,
-                }}
-                to='/'
-              >
-                {title}
-              </Link>
-            </h1>
-              : <h3
-                style={{
-                  fontFamily: `Montserrat, sans-serif`,
-                  marginTop: 0,
-                  color: "var(--textTitle)"
-                }}
-              >
-                <Link
-                  style={{
-                    boxShadow: `none`,
-                    textDecoration: `none`,
-                    color: `inherit`,
-                  }}
-                  to={`/blog/`}
-                >
-                  {`${title} blog`}
-                </Link>
-              </h3>}
-            <MarginToggle
-              checked={theme === 'dark'}
-              onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
-              icons={{
-                checked: (
-                  <img
-                    src={moon}
-                    width="16"
-                    height="16"
-                    alt="moon"
-                    style={{ pointerEvents: 'none' }}
-                  />
-                ),
-                unchecked: (
-                  <img
-                    src={sun}
-                    width="16"
-                    height="16"
-                    alt="sun"
-                    style={{ pointerEvents: 'none' }}
-                  />
-                ),
-              }} />
-          </React.Fragment>
-        )}
+      isRootOrBlogIndex ? <h1
+        style={{
+          ...scale(1),
+          marginBottom: rhythm(1.5),
+          marginTop: 0,
+        }}
+      >
+        <Link
+          style={{
+            boxShadow: `none`,
+            textDecoration: `none`,
+            color: `inherit`,
+          }}
+          to='/'
+        >
+          {title}
+        </Link>
+      </h1>
+        : <h3
+          style={{
+            fontFamily: `Montserrat, sans-serif`,
+            marginTop: 0,
+            color: "var(--textTitle)"
+          }}
+        >
+          <Link
+            style={{
+              boxShadow: `none`,
+              textDecoration: `none`,
+              color: `inherit`,
+            }}
+            to={`/blog/`}
+          >
+            {`${title} blog`}
+          </Link>
+        </h3>
 
-      </ThemeToggler>
+
     )
 
     return (
@@ -115,10 +81,6 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`
-
-const MarginToggle = styled(Toggle)`
-  margin-bottom: ${rhythm(1.5)}
 `
 
 const Wrapper = styled.div`
